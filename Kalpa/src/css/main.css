@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 88vw; */
+  background-color: #e3e4c4;
+  padding: 24px;;
+}
+
+
+/* Report css */
+
+.heads {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.custome-table {
+  overflow: auto;
+  height: 28vh;
+}
+.table-container {
+  background-color: #d9d9d9;
+  margin: 10px;
+}
+
+.table-top {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.table-details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 20vh;
+}
+
+/* .detail {
+  padding: 10px;
+  margin: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+} */
+
+.sub-total {
+  display: flex;
+  justify-content: end;
+  margin-right: 18vw;
+  padding: 30px;
+}
+
+.report-stock-container {
+  background-color: #d9d9d9;
+
+  margin: 10px;
+}
+
+.report-action-table {
+  overflow: auto;
+  height: 30vh;
+}
+
+.toggle-report {
+  display: flex;
+  justify-content: end;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.pdf-btn{
+  position: relative;
+  /* left: 23vw; */
+  /* top: 22px; */
+}
+
+.report-delete{
+  position: relative;
+  right: 45px;
+}
+
+/* Products css */
+
+
+/* Billing css */
+
+.customer-inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+.billing-customer-input {
+  width: 45%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.billing-action-table {
+  overflow: auto;
+  height: 40vh;
+  /* margin: 10px;
+  padding: 10px; */
+}
+
+.billing-sub-totall {
+  display: flex;
+  justify-content: end;
+  /* margin-right: 25vw; */
+  padding: 30px;
+}

@@ -1,0 +1,55 @@
+version: "3"
+services: 
+  # MysqlDB 
+  db: 
+    container_name: mysqldb 
+    image: "mysql" 
+    restart: always 
+    environment: 
+      MYSQL_ROOT_PASSWORD: password 
+      MYSQL_DATABASE: kalpa 
+    volumes: 
+      - mysql_vol:/var/lib/mysql 
+    command: --default-authentication-plugin=mysql_native_password 
+    ports: 
+      - "3306:3306" 
+  # Web API 
+  server: 
+    container_name: kalpaapi 
+    build: ./Kalpa-backend 
+    depends_on: 
+      - db 
+    restart: always 
+    #volumes: 
+     # - C:\Users\User\Documents/kalpainvoices:/kalpaapi/invoice 
+      # - ./Kalpa-backend/invoice:/kalpaapi/invoice 
+      # - kalpainvoice:/kalpaapi/invoice 
+    ports: 
+      - "5000:5000" 
+    environment: 
+      HOST: db 
+      DB_USER: root 
+      DB_PASSWORD: password 
+      DB: kalpa 
+      PORT: 5000 
+      PRINTER_IP: "192.168.101.222" 
+      PDF_WATERMARK: "Kalpa Production" 
+      LODGE_NAME: "KALPA PRODUCTION" 
+      LODGE_ADDRESS: "Sainbu-18, Nakhu Lalitpur" 
+      LODGE_PHONE: "9810647047" 
+      LODGE_EMAIL: "kalpaproduction7@gmail.com" 
+      LODGE_PAN: "612356948" 
+      FOR_LODGE: "Khagisara Baduwal" 
+  # Frontend 
+  ui: 
+    container_name: kalpaui 
+    build: ./Kalpa 
+    depends_on: 
+      - server 
+    restart: always 
+    ports: 
+      - "80:80" 
+# Volumes 
+volumes: 
+  mysql_vol: {} 
+  kalpainvoice: 

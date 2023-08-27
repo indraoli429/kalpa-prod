@@ -1,0 +1,43 @@
+.navBar-container {
+  min-height: 100vh;
+  background-color: #d9d9d9;
+}
+
+.navBar-links{
+  min-height: 100vh;
+}
+
+.image-container{
+  background-color: white;
+}
+
+ul {
+  background-color: #d9d9d9;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 1vh;
+}
+
+.li-navBar > span {
+  color: black;
+}
+
+.selected-li-navBar{
+    background-color: black;
+}
+
+.selected-li-navBar > span {
+    color: white;
+}
+
+.li-navBar {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+}

@@ -1,0 +1,94 @@
+
+UPDATE productStock
+SET productName="prom", price=210, quantity=2
+WHERE productStockId= 3;
+
+-----------------------------------------------------------------------------------
+
+DELETE FROM productStock WHERE productStockId = 1;
+
+-----------------------------------------------------------------------------------
+
+
+SELECT COUNT(billingId) FROM BILLING;
+
+-----------------------------------------------------------------------------------
+
+INSERT INTO billing() values ();
+
+-----------------------------------------------------------------------------------
+
+INSERT INTO orders (billingId, productStockId, orderQuantity) VALUES(1,1,2);
+
+SELECT orders.orderId, orders.billingId, orders.productStockId, orders.orderQuantity, productStock.productStockId, productStock.productName,
+        productStock.price , productStock.quantity
+FROM orders
+INNER JOIN productStock ON orders.productStockId = productStock.productStockId
+WHERE orders.billingId = 1 
+
+SELECT COUNT(orderId)
+FROM orders
+WHERE billingId = 1 AND productStockId = 1;
+
+UPDATE orders 
+SET orderQuantity = 10
+WHERE orderId = 7
+
+DELETE FROM orders WHERE orderId = 2
+
+--------------------------------------------------------------------------------------------------
+
+UPDATE billing
+SET 
+invoiceNo = "INV/79-80/2",
+fiscal_year = "79-80",
+customer_name = "",
+customer_PAN = "57985",
+bill_date = "2018-03-29T13:34:00.000",
+amount = 1000,
+discount = 100,
+taxable_amount = 900,
+tax_amount = 50,
+total_amount = 1500,
+sync_with_IRD = true,
+is_bill_printed = true,
+is_bill_active = true,
+printed_time = "2018-03-29T13:34:00.000",
+entered_by = "Rie",
+printed_by = "Rie",
+is_realtime = true,
+payment_method = "QR",
+vat_refund_amount = 123,
+is_deleted = false,
+copy_of_original = "1356",
+print_count = 5
+WHERE billingId = 1;
+
+SELECT * FROM billing ORDER BY billingId DESC LIMIT 1,1;
+
+SELECT COUNT(*) FROM billing WHERE invoiceNo IS NULL;
+
+SELECT * FROM billing WHERE invoiceNo = "INV/2079-2080/3";
+
+SELECT * FROM billing WHERE is_bill_active = true;
+
+UPDATE billing
+SET 
+is_deleted = true
+WHERE invoiceNo = "INV/2079-2080/3";
+
+----------------------------------------------------------------------------------------------------
+
+INSERT INTO logs(date, remarks) VALUES(,);
+
+----------------------------------------------------------------------------------------------------------
+
+SELECT * from billing WHERE invoiceNo IS NOT NULL;
+ 
+------------------------------------------------------------------------------------------------------------
+
+
+UPDATE billing
+SET 
+print_count = 5
+WHERE billingId = 1;

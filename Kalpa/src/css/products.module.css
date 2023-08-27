@@ -1,0 +1,23 @@
+
+.products-bg{
+    background-color: #E3E4C4;
+    margin: 10px;
+  }
+  .producttable{
+    overflow: auto;
+    height: 50vh;
+  }
+  
+  .addBtn{
+    position: relative;
+  /* left: 23vw;
+  top: 22px; */
+  }
+  .addBtnWrpr{
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .h5{
+    margin: 0px;
+  }
